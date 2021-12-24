@@ -1,8 +1,3 @@
-pheno_2020<-read.csv("D:\\NDSU_work\\grapes\\grapephenoanalysis_14DEC2021\\pheno_grape2020.csv",
-                     colClasses = c(rep("factor",4),rep("numeric",27)), check.names = F)
-head(pheno_2020)
-pheno_2020<-pheno_2020[1:4368,1:31]
-head(pheno_2020)
 
 library(tidyverse)
 library(dplyr)
@@ -10,6 +5,14 @@ library(lubridate)
 library(ggplot2)
 library(tidyr)
 library(car)
+
+pheno_2020<-read.csv("D:\\NDSU_work\\grapes\\grapephenoanalysis_14DEC2021\\pheno_grape2020.csv",
+                     colClasses = c(rep("factor",4),rep("numeric",27)), check.names = F)
+head(pheno_2020)
+pheno_2020<-pheno_2020[1:4368,1:31]
+head(pheno_2020)
+
+
 
 pheno_2021<-read.csv("D:\\NDSU_work\\grapes\\grapephenoanalysis_14DEC2021\\pheno_grape2021.csv",
                      colClasses = c(rep("factor",4),rep("numeric",22)), check.names = F)
@@ -183,14 +186,14 @@ library(GGally)
 ggpairs(tidy_onset[2:8])
 
 
-# chillhours --------------------------------------------------------------
+# chillhours-----------This is not complete- Just messing around---------------------------------------------------
 library(evobiR)
 library(dplyr)
 library(lubridate)
 library(weathermetrics)
 library(fruclimadapt)
 library(chillR)
-
+###you need a csv file from NDAWN listing daily highs and lows 
 fargodf<-read.csv(header=T,"D:\\NDSU_work\\grapes\\grapephenoanalysis_14DEC2021\\fargo_daily.csv")
 fargodf$Date<-as_date(fargodf$Date)
 
